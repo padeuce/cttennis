@@ -17,7 +17,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&amp;family=Roboto:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
   <link rel="preload" as="image" href="assets/images/ct-tennis-hero-cape-town.png">
   <link rel="stylesheet" href="css/reset.css">
-  <link rel="stylesheet" href="css/tennis-league.css?v=6">
+  <link rel="stylesheet" href="css/tennis-league.css?v=7">
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to content</a>
@@ -33,12 +33,12 @@
         <img class="brand__padeuce" src="assets/images/padeuce-brandmark-white-text.svg" width="285" height="83" alt="Padeuce">
       </a>
       <nav class="site-nav" aria-label="Primary navigation">
-        <a href="#clubs">Clubs</a><a href="#live-scores">Live Scores</a><a href="#fixtures">Fixtures &amp; Results</a><a href="#standings">Standings</a><a href="#league-info">League Info</a>
+        <a href="#clubs" hidden>Clubs</a><a href="#fixtures">Fixtures &amp; Results</a><a href="#standings">Standings</a><a href="#league-info">League Info</a><a href="#live-scores">Live Scores</a>
       </nav>
       <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" data-menu-toggle><span></span><span></span><span></span><b>Menu</b></button>
     </div>
     <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation" hidden data-mobile-nav>
-      <a href="#clubs">Clubs</a><a href="#live-scores">Live Scores</a><a href="#fixtures">Fixtures &amp; Results</a><a href="#standings">Standings</a><a href="#league-info">League Info</a>
+      <a href="#clubs" hidden>Clubs</a><a href="#fixtures">Fixtures &amp; Results</a><a href="#standings">Standings</a><a href="#league-info">League Info</a><a href="#live-scores">Live Scores</a>
     </nav>
   </header>
   <main id="main-content">
@@ -72,10 +72,10 @@
         <a class="quick-nav__item quick-nav__item--red" href="#standings"><span>04</span><div><b>Standings</b><small>Live division tables</small></div><i>→</i></a>
       </div>
     </nav>
-    <section class="club-carousel" id="clubs" aria-labelledby="competing-clubs-title">
+    <section class="club-carousel" id="clubs" aria-labelledby="competing-clubs-title" hidden>
       <div class="container club-carousel__heading">
         <div><span class="club-carousel__kicker">Across the peninsula</span><h2 id="competing-clubs-title">Clubs competing in 2026</h2></div>
-        <a class="club-carousel__count" href="https://www.cttennis.co.za/2025/Resources/Booklet%202025-2026.pdf" target="_blank" rel="noopener">36 affiliated clubs <span aria-hidden="true">↗</span></a>
+        <a class="club-carousel__count" href="https://www.cttennis.co.za/2025/Resources/Booklet%202025-2026.pdf" target="_blank" rel="noopener">40 affiliated clubs <span aria-hidden="true">↗</span></a>
       </div>
       <div class="club-carousel__viewport" tabindex="0" aria-label="Competing tennis clubs. Scroll horizontally to browse." data-club-carousel>
         <div class="club-carousel__track" data-club-track></div>
@@ -83,23 +83,8 @@
     </section>
     <section class="league-overview" aria-label="League overview">
       <div class="container league-overview__grid">
-        <div><strong data-stat="clubs">—</strong><span>Club teams</span></div><div><strong data-stat="divisions">—</strong><span>Divisions</span></div><div><strong data-stat="fixtures">—</strong><span>Scheduled ties</span></div>
+        <div><strong data-stat="clubs">—</strong><span>Club teams</span></div><div><strong>40</strong><span>Affiliated clubs</span></div><div><strong data-stat="divisions">—</strong><span>Divisions</span></div><div><strong data-stat="fixtures">—</strong><span>Scheduled ties</span></div>
         <p data-sheet-status role="status" aria-live="polite"><i></i><span>Connecting to the live league sheet…</span></p>
-      </div>
-    </section>
-    <section class="section live-scores" id="live-scores" aria-labelledby="live-scores-title">
-      <div class="container">
-        <div class="section-heading">
-          <div><p class="eyebrow"><span></span> Live match centre</p><h2 id="live-scores-title">Live <em>Scores</em></h2><p>Choose a competing tennis club to follow its active court feeds. Scores will appear automatically when a live feed is available.</p></div>
-          <label class="club-filter"><span>Filter by tennis club</span><select data-live-club aria-label="Filter live scores by tennis club"><option value="all">All competing clubs</option></select></label>
-        </div>
-        <div class="live-score-summary"><span><i></i> Monitoring court feeds</span><b data-live-club-label>All competing clubs</b></div>
-        <div class="live-courts" data-live-courts aria-live="polite">
-          <article class="live-court" data-live-court="1"><header><span>Live court</span><b>Court 1</b><i>Waiting</i></header><div class="live-court__placeholder"><span aria-hidden="true">1</span><h3>Waiting for a live match</h3><p>Select a club or check back once play begins.</p></div></article>
-          <article class="live-court" data-live-court="2"><header><span>Live court</span><b>Court 2</b><i>Waiting</i></header><div class="live-court__placeholder"><span aria-hidden="true">2</span><h3>Waiting for a live match</h3><p>Select a club or check back once play begins.</p></div></article>
-          <article class="live-court" data-live-court="3"><header><span>Live court</span><b>Court 3</b><i>Waiting</i></header><div class="live-court__placeholder"><span aria-hidden="true">3</span><h3>Waiting for a live match</h3><p>Select a club or check back once play begins.</p></div></article>
-          <article class="live-court" data-live-court="4"><header><span>Live court</span><b>Court 4</b><i>Waiting</i></header><div class="live-court__placeholder"><span aria-hidden="true">4</span><h3>Waiting for a live match</h3><p>Select a club or check back once play begins.</p></div></article>
-        </div>
       </div>
     </section>
     <section class="section" id="fixtures" aria-labelledby="fixtures-title">
@@ -138,11 +123,26 @@
     <section class="section league-info" id="league-info" aria-labelledby="league-info-title">
       <div class="container"><div class="section-heading"><div><p class="eyebrow"><span></span> Season at a glance</p><h2 id="league-info-title">The road to the <em>Shootout</em></h2></div></div><div class="timeline"><article><span>05 Sep</span><b>Opening round</b><p>The first Men’s and Ladies fixtures get the 2026 campaign underway.</p></article><article><span>14 Nov</span><b>Catch-up round</b><p>A final window to complete postponed or outstanding league ties.</p></article><article><span>21 Nov</span><b>League Shootout</b><p>Division contenders close the season in the end-of-year Shootout.</p></article></div></div>
     </section>
+    <section class="section live-scores" id="live-scores" aria-labelledby="live-scores-title">
+      <div class="container">
+        <div class="section-heading">
+          <div><p class="eyebrow"><span></span> Live match centre</p><h2 id="live-scores-title">Live <em>Scores</em></h2><p>Choose a competing tennis club to follow its active court feeds. Scores will appear automatically when a live feed is available.</p></div>
+          <label class="club-filter"><span>Filter by tennis club</span><select data-live-club aria-label="Filter live scores by tennis club"><option value="all">All competing clubs</option></select></label>
+        </div>
+        <div class="live-score-summary"><span><i></i> Monitoring court feeds</span><b data-live-club-label>All competing clubs</b></div>
+        <div class="live-courts" data-live-courts aria-live="polite">
+          <article class="live-court" data-live-court="1"><header><span>Live court</span><b>Court 1</b><i>Waiting</i></header><div class="live-court__placeholder"><span aria-hidden="true">1</span><h3>Waiting for a live match</h3><p>Select a club or check back once play begins.</p></div></article>
+          <article class="live-court" data-live-court="2"><header><span>Live court</span><b>Court 2</b><i>Waiting</i></header><div class="live-court__placeholder"><span aria-hidden="true">2</span><h3>Waiting for a live match</h3><p>Select a club or check back once play begins.</p></div></article>
+          <article class="live-court" data-live-court="3"><header><span>Live court</span><b>Court 3</b><i>Waiting</i></header><div class="live-court__placeholder"><span aria-hidden="true">3</span><h3>Waiting for a live match</h3><p>Select a club or check back once play begins.</p></div></article>
+          <article class="live-court" data-live-court="4"><header><span>Live court</span><b>Court 4</b><i>Waiting</i></header><div class="live-court__placeholder"><span aria-hidden="true">4</span><h3>Waiting for a live match</h3><p>Select a club or check back once play begins.</p></div></article>
+        </div>
+      </div>
+    </section>
   </main>
   <footer class="site-footer">
-    <div class="container site-footer__top"><div class="footer-brand"><img src="assets/images/cpt-wp-logos.png" width="478" height="254" alt="Cape Town Tennis"><p>The home of everything tennis related in Cape Town.</p></div><div><b>League hub</b><a href="#live-scores">Live Scores</a><a href="#fixtures">Fixtures &amp; Results</a><a href="#standings">Standings</a><a href="#league-info">Season info</a></div><div><b>Official links</b><a href="https://www.cttennis.co.za" target="_blank" rel="noopener">Cape Town Tennis</a><a href="https://www.cttennis.co.za/leagues_ratings/" target="_blank" rel="noopener">League &amp; Ratings</a><a href="https://www.cttennis.co.za/contact-us/" target="_blank" rel="noopener">Contact</a></div></div>
+    <div class="container site-footer__top"><div class="footer-brand"><img src="assets/images/cpt-wp-logos.png" width="478" height="254" alt="Cape Town Tennis"><p>The home of everything tennis related in Cape Town.</p></div><div><b>League hub</b><a href="#fixtures">Fixtures &amp; Results</a><a href="#standings">Standings</a><a href="#league-info">Season info</a><a href="#live-scores">Live Scores</a></div><div><b>Official links</b><a href="https://www.cttennis.co.za" target="_blank" rel="noopener">Cape Town Tennis</a><a href="https://www.cttennis.co.za/leagues_ratings/" target="_blank" rel="noopener">League &amp; Ratings</a><a href="https://www.cttennis.co.za/contact-us/" target="_blank" rel="noopener">Contact</a></div></div>
     <div class="site-footer__bottom"><div class="container"><span>Cape Town Tennis League · 2026</span><span>Digital match centre powered by <img src="assets/images/padeuce-brandmark-white-text.svg" width="285" height="83" alt="Padeuce"></span></div></div>
   </footer>
-  <script defer src="js/tennis-league.js?v=4"></script>
+  <script defer src="js/tennis-league.js?v=5"></script>
 </body>
 </html>
